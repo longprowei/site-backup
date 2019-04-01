@@ -2,8 +2,6 @@
 
 BACKUP_DIR='~/backup'
 FILE_MAX_NUM=6
-DB_USER_NAME='my_database_user'
-DB_PASSWORD='my_db_password'
 
 chdir $BACKUP_DIR
 
@@ -22,10 +20,15 @@ rename_file()
 }
 
 
-#backup mysql database
+#backup mysql database -- chinese blog
 rename_file "wpdb.sql" "gz"
 mysqldump -u$DB_USER_NAME -p$DB_PASSWORD wordpress | gzip > wpdb.sql.0.gz
 chmod 600 wpdb.sql.0.gz
+
+#backup mysql database -- english blog
+rename_file "wpdb_en.sql" "gz"
+mysqldump -u$DB_USER_NAME -p$DB_PASSWORD wordpress_en | gzip > wpdb_en.sql.0.gz
+chmod 600 wpdb_en.sql.0.gz
 
 #backup /var/www dir
 rename_file 'site' 'tgz'

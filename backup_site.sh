@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-BACKUP_DIR='~/backup'
+BACKUP_DIR=${HOME}/backup
 FILE_MAX_NUM=6
 
-chdir $BACKUP_DIR
+cd $BACKUP_DIR
 
 rename_file()
 {

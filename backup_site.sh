@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BACKUP_DIR=${HOME}/backup
-FILE_MAX_NUM=6
+FILE_MAX_NUM=2
 
 cd $BACKUP_DIR
 
